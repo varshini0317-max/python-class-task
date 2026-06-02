@@ -1,0 +1,55 @@
+#1.a)IN file handling method
+'''a=open("C:\\Users\\Hp\\Desktop\\student.txt","x")
+print("students mark file created")
+
+a=open("C:\\Users\\Hp\\Desktop\\student.txt","w")
+a.write("HOLY ANGELS PUBLIC SCHOOL\n")
+a.close()
+
+n=int(input("Number of students? "))
+
+for i in range(n):
+    name=input("Enter student name: ")
+    marks=input("Enter total mark obtained by the student: ")
+
+    a=open("C:\\Users\\Hp\\Desktop\\student.txt","a")
+    a.write(name + " = " + marks + "\n")
+    a.close()
+
+a=open("C:\\Users\\Hp\\Desktop\\student.txt","r")
+print(a.read())
+a.close()
+
+#b.IN exceptional handling method
+try:
+    n=int(input("Number of students? "))
+
+    for i in range(n):
+        name=input("Enter student name: ")
+        marks=input("Enter total mark obtained by the student: ")
+
+        a=open("C:\\Users\\Hp\\Desktop\\student.txt","a")
+        a.write(name + "=" + marks + "\n")
+        a.close()
+
+except Exception as e:
+    print(e)'''
+#2.a)
+'''a=open("C:\\Users\\Hp\\Desktop\\expenses.csv","x")
+print("expenses.csv file created")'''
+
+a=open("C:\\Users\\Hp\\Desktop\\expenses.csv","w")
+a.write("Date,Category,Amount\n")
+a.close()
+
+date = input("Enter date: ")
+category = input("Enter category: ")
+amount = input("Enter amount: ")
+
+a=open("C:\\Users\\Hp\\Desktop\\expenses.csv","a")
+a.write(date + "," + category + "," + amount + "\n")
+a.flush()
+a.close()
+
+
+
