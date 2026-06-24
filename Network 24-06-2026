@@ -1,0 +1,37 @@
+#server side 
+import socket
+s = socket.socket()
+s.bind(("localhost", 12345))
+s.listen(1)
+print("Waiting for client...")
+conn, addr = s.accept()
+print("Connected!")
+while True:
+    msg = conn.recv(1024).decode()
+    print("Client:", msg)
+    if msg == "stop":
+        break
+    reply = input("You: ")
+    conn.send(reply.encode())
+    if reply == "stop":
+        break
+conn.close()
+s.close()
+
+
+#client side
+
+import socket
+c = socket.socket()
+c.connect(("localhost", 12345))
+while True:
+    msg = input("You: ")
+    c.send(msg.encode())
+    if msg == "stop":
+        break
+    reply = c.recv(1024).decode()
+    print("Server:", reply)
+
+    if reply == "stop":
+        break
+c.close()
